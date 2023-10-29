@@ -48,7 +48,7 @@ export default function Contact() {
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>Let's work together</motion.h1>
         {items.map((item) => (
-          <motion.div variants={variants} className="item">
+          <motion.div key={item.headline} variants={variants} className="item">
             <h2>{item.headline}</h2>
             <span>{item.desc}</span>
           </motion.div>
@@ -68,7 +68,6 @@ export default function Contact() {
               initial={{ pathLength: 0 }}
               animate={isInView && { pathLength: 1 }}
               transition={{ duration: 3 }}
-              class="st0"
               d="M255.998,0.002C114.606,0.012,0.01,114.604,0,256c0.01,141.406,114.65,255.328,255.926,255.998h0.334
 		l0.297-0.009c27.124,0.038,49.507-8.527,64.961-22.594c15.468-14.01,23.727-33.254,23.708-52.736
 		c0.02-9.148-1.914-18.306-5.521-27.024c6.086-3.464,10.143-6.612,11.301-7.444c4.152-2.957,16-18.766,7.693-31.79
